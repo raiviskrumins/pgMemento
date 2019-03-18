@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  pgmemento_db:
+    build:
+      context: .
+    volumes:
+      - pgmemento_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: pgmemento
+      POSTGRES_USER: pgmemento
+      POSTGRES_PASSWORD: pgmemento
+      PGUSER: pgmemento
+      PGPASSWORD: pgmemento
+    ports:
+      - 5435:5432
+
+volumes:
+  pgmemento_db: {}
